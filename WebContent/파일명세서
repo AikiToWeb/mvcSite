@@ -1,0 +1,17 @@
+mvcSite 파일 명세서
+
+회원 : 회원가입, 정보수정 , 회원탈퇴
+ - 정보 : MemberInfo클래스
+ - 컨트롤러 : MemberCtrl - *.mem
+ - 가입 : 아이디 중복 검사 - DupIdCtrl, DupIdSvc, DupIdDao
+ - 수정 : MemberUpAct -> 회원 정보 수정의 경우 로그인할 때 이미 받아서 세션에 담겨있기 때문에 따로 받을 필요가 없다.
+ - 처리 : MemberProcAct, MemberProcSvc
+ - DB : MemberDao
+
+상품 - 프론트 : 목록(검색조건), 상세보기(옵션, 수량, 후기보기)
+ - 정보 : ProductInfo, PdtCataBig, PdtCataSmall, PdtBrand
+ - 컨트롤러 : ProductCtrl = *.pdt
+ - 목록(pdt_list.pdt) : PdtListAct, PdtListSvc, pdt_list.jsp
+ - 상세보기(pdt_view.pdt) : pdtViewAct, pdtViewSvc, pdt_view.jsp
+ - DB : ProductDao
+
