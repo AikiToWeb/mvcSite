@@ -8,8 +8,8 @@ mvcSite 파일 명세서
  - 정보 : MemberInfo
  - 컨트롤러 : MemberCtrl(서블릿) - *.mem
  - 로그인 : (login.mem) : LoginCtrl, LoginSvc (로그인 특성상 Act클래스가 별 필요 없음)
- - 가입(member_in_proc.mem) : 아이디 중복 검사 - DupIdCtrl, DupIdSvc, DupIdDao
- - 수정(member_up_proc.mem) : MemberUpAct -> 회원 정보 수정의 경우 로그인할 때 이미 받아서 세션에 담겨있기 때문에 따로 받을 필요가 없다.
+ - 가입(member_proc.mem) : 아이디 중복 검사 - DupIdCtrl, DupIdSvc, DupIdDao
+ - 수정(member_proc.mem) : MemberUpAct -> 회원 정보 수정의 경우 로그인할 때 이미 받아서 세션에 담겨있기 때문에 따로 받을 필요가 없다.
  - 처리 : MemberProcAct, MemberProcSvc
  - DB : MemberDao
 

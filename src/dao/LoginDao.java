@@ -29,7 +29,7 @@ public class LoginDao {
 
 		try {
 			stmt = conn.createStatement();
-			String sql = "select * from t_member_info where mi_id = '" + uid + "' and mi_pw ='" + pwd + "' ";
+			String sql = "select * from t_member_info where mi_id = '" + uid + "' and mi_pw ='" + pwd + "' and mi_isact = 'y' ";
 			rs = stmt.executeQuery(sql);
 			if (rs.next()) {
 				memberInfo = new MemberInfo();	// rs에 담긴 데이터들을 저장할 인스턴스 생성
