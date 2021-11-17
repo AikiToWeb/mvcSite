@@ -1,0 +1,31 @@
+mvcSite 파일 명세서
+
+공용 : db.JdbcUtil, act.Action, vo.ActionForward
+
+메인페이지 : index.jsp
+
+/member/ 회원 : 로그인, 로그아웃, 회원가입, 정보수정 , 회원탈퇴
+ - 정보 : MemberInfo
+ - 컨트롤러 : MemberCtrl(서블릿) - *.mem
+ - 로그인 : (login.mem) : LoginCtrl, LoginSvc (로그인 특성상 Act클래스가 별 필요 없음)
+ - 가입(member_in_proc.mem) : 아이디 중복 검사 - DupIdCtrl, DupIdSvc, DupIdDao
+ - 수정(member_up_proc.mem) : MemberUpAct -> 회원 정보 수정의 경우 로그인할 때 이미 받아서 세션에 담겨있기 때문에 따로 받을 필요가 없다.
+ - 처리 : MemberProcAct, MemberProcSvc
+ - DB : MemberDao
+
+/product/ 상품 - 프론트 : 목록(검색조건), 상세보기(옵션, 수량, 후기보기)
+ - 정보 : ProductInfo, PdtCataBig, PdtCataSmall, PdtBrand
+ - 컨트롤러 : ProductCtrl = *.pdt
+ - 목록(pdt_list.pdt) : PdtListAct, PdtListSvc, pdt_list.jsp
+ - 상세보기(pdt_view.pdt) : pdtViewAct, pdtViewSvc, pdt_view.jsp
+ - DB : ProductDao
+ 
+ /order/ 주문 - 프론트 : 장바구니(입력, 수정, 삭제, 화면), 결제화면(배송지 정보, 결제 정보, 구매할 상품 정보들), 결제처리(입력처리)
+ - 정보 : ProductInfo, CartInfo, 
+ - 컨트롤러 : OrderCtrl - *.ord
+ - 장바구니 화면(cart_list.ord) : CartListAct, CartListSvc, cart_list.jsp
+ - 장바구니 담기(cart_in_proc.ord) ,장바구니 수정(cart_up_proc.ord), 장바구니 삭제(cart_del_proc.ord) : CartDelProcAct, CartDelProcSvc
+ - 결제 화면(order_form.ord) : OrderFormAct, OrderFormSvc, oder_form.jsp
+ - 결제 처리(order_proc.ord) : OrderProcAct, OrderProcSvc
+ - DB : OrderDao
+
